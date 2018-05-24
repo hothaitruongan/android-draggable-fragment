@@ -66,8 +66,9 @@ public class CustomFragmentDragManager
 
                                     @Override
                                     public void onAnimationEnd(Animator animation) {
-                                        // ((MainActivity) mWeakReference.get()).pop();
-                                        mOnFragmentDragListener.onDragReleased(true);
+                                        if(mOnFragmentDragListener != null) {
+                                            mOnFragmentDragListener.onDragReleased(true);
+                                        }
                                     }
 
                                     @Override
